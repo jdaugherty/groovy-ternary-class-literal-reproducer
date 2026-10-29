@@ -1,5 +1,7 @@
 # A ternary of two ternaries of class literals is cast to the classes' common supertype under invokedynamic
 
+Reported as [GROOVY-12559](https://issues.apache.org/jira/browse/GROOVY-12559). The fix is proposed in [apache/groovy#3087](https://github.com/apache/groovy/pull/3087), with a backport to `GROOVY_6_0_X` in commit [937077ab9a](https://github.com/jdaugherty/groovy/commit/937077ab9a59064254710c513e60b1fa64be391a) and to `GROOVY_5_1_X` in commit [ad11e487df](https://github.com/jdaugherty/groovy/commit/ad11e487df3bfb08b0ad5fe2cd6151c8067b043e).
+
 Since Groovy 5.0.0-alpha-4 (GROOVY-10936), the type of a ternary expression is the common supertype of its branches'
 types. A class literal's type is the class it names, not `java.lang.Class`, so a ternary that chooses between two
 ternaries of class literals,
